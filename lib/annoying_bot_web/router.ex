@@ -13,6 +13,7 @@ defmodule AnnoyingBotWeb.Router do
 
     get "/curses/:user_id", CursesController, :curse_user
     get "/curses", CursesController, :all
+    post "/curses", CursesController, :create
   end
 
   # Enables LiveDashboard only for development

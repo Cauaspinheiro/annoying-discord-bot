@@ -1,4 +1,6 @@
 defmodule AnnoyingBotWeb.CursesView do
+  alias AnnoyingBot.Curse
+
   def render("curse_user.json", %{message: message}) do
     %{
       message: message
@@ -13,5 +15,12 @@ defmodule AnnoyingBotWeb.CursesView do
       inserted_at: value.inserted_at
     }
     end)
+  end
+
+  def render("create_curse.json", %{curse: %Curse{id: id, phrase: phrase}}) do
+    %{
+      id: id,
+      phrase: phrase
+    }
   end
 end

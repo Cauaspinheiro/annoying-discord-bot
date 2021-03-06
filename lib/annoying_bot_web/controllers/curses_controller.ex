@@ -18,4 +18,14 @@ defmodule AnnoyingBotWeb.CursesController do
       |> render("curses.json", curses: curses)
     end
   end
+
+  def create(conn, params) do
+    with {:ok, curse} <- AnnoyingBot.create_curse(params) do
+      IO.inspect(curse)
+
+      conn
+      |> put_status(:created)
+      |> render("create_curse.json", curse: curse)
+    end
+  end
 end
