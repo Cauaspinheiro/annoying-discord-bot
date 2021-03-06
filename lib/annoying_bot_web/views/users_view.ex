@@ -9,4 +9,15 @@ defmodule AnnoyingBotWeb.UsersView do
       }
     }
   end
+
+  def render("users.json", %{users: users}) do
+    Enum.map(users, fn value -> %{
+      name: value.name,
+      id: value.id,
+      discord_id: value.discord_id,
+      updated_at: value.updated_at,
+      inserted_at: value.inserted_at
+    }
+    end)
+  end
 end

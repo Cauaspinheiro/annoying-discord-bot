@@ -9,6 +9,7 @@ defmodule AnnoyingBotWeb.Router do
     pipe_through :api
 
     post "/users", UsersController, :create
+    get "/users", UsersController, :all
 
     get "/curse/:user_id", CursesController, :curse_user
   end
