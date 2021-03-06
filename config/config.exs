@@ -18,6 +18,9 @@ config :annoying_bot, AnnoyingBotWeb.Endpoint,
   pubsub_server: AnnoyingBot.PubSub,
   live_view: [signing_salt: "Q+BNmfJ4"]
 
+config :annoying_bot, AnnoyingBot.Repo,
+  migration_primary_key: [type: :binary_id]
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

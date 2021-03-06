@@ -8,7 +8,7 @@ defmodule AnnoyingBotWeb.Router do
   scope "/api", AnnoyingBotWeb do
     pipe_through :api
 
-    get "/welcome", WelcomeController, :welcome
+    post "/users", UsersController, :create
   end
 
   # Enables LiveDashboard only for development
