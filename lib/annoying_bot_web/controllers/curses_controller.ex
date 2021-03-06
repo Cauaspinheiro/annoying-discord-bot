@@ -10,4 +10,12 @@ defmodule AnnoyingBotWeb.CursesController do
       |> render("curse_user.json", message: message)
     end
   end
+
+  def all(conn, _params) do
+    with {:ok, curses: curses}  <- AnnoyingBot.get_all_curses() do
+      conn
+      |> put_status(:ok)
+      |> render("curses.json", curses: curses)
+    end
+  end
 end
