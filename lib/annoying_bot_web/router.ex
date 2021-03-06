@@ -9,6 +9,8 @@ defmodule AnnoyingBotWeb.Router do
     pipe_through :api
 
     post "/users", UsersController, :create
+
+    get "/curse/:user_id", CursesController, :curse_user
   end
 
   # Enables LiveDashboard only for development
