@@ -9,7 +9,7 @@ defmodule AnnoyingBotWeb.UsersController do
     with {:ok, %User{} = user} <- AnnoyingBot.create_user(params) do
       conn
       |> put_status(:created)
-      |> render("create_user.json", data: user)
+      |> render("create_user.json", user: user)
     end
   end
 

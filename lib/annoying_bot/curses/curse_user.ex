@@ -3,7 +3,7 @@ defmodule AnnoyingBot.Curses.CurseUser do
 
   def call(%{"user_id" => user_id}) do
     {:ok, user: %User{name: name}} = AnnoyingBot.get_user_by_id(user_id)
-    %Curse{phrase: phrase} = AnnoyingBot.get_random_curse()
+    {:ok, curse: %Curse{phrase: phrase}} = AnnoyingBot.get_random_curse()
 
     message = Regex.replace(~r/{([a-z]+)?}/, phrase, fn -> name end)
 
