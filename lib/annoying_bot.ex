@@ -4,7 +4,7 @@ defmodule AnnoyingBot do
   defdelegate get_all_users(), to: AnnoyingBot.Users.Read, as: :all
 
   defdelegate create_curse(params), to: AnnoyingBot.Curses.Create, as: :call
-  defdelegate get_random_curse(), to: AnnoyingBot.Curses.Read, as: :get_random_curse
+  defdelegate get_random_curse(type), to: AnnoyingBot.Curses.Read, as: :get_random_curse
   defdelegate get_all_curses(), to: AnnoyingBot.Curses.Read, as: :all
   defdelegate curse_user(params), to: AnnoyingBot.Curses.CurseUser, as: :call
 end

@@ -12,7 +12,8 @@ defmodule AnnoyingBotWeb.CursesView do
       phrase: value.phrase,
       id: value.id,
       updated_at: value.updated_at,
-      inserted_at: value.inserted_at
+      inserted_at: value.inserted_at,
+      type: value.type
     }
     end)
   end
