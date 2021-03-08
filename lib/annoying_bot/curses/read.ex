@@ -9,10 +9,12 @@ defmodule AnnoyingBot.Curses.Read do
   end
 
   def get_random_curse(type) do
-    Curse
-    |> where([c], c.type == ^type)
-    |> Repo.all()
-    |> return_random_or_error()
+    with :ok <- Curse.validate_type(type) do
+      Curse
+      |> where([c], c.type == ^type)
+      |> Repo.all()
+      |> return_random_or_error()
+    end
   end
 
   defp return_random_or_error(curses) do

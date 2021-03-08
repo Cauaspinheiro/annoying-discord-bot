@@ -7,6 +7,8 @@ defmodule AnnoyingBot.Curse do
 
   @required_params [:phrase, :type]
 
+  @valid_types ["offline", "online", "general"]
+
   schema "curses" do
     field :phrase, :string
     field :type, :string
@@ -19,6 +21,15 @@ defmodule AnnoyingBot.Curse do
     |> cast(params, @required_params)
     |> validate_required(@required_params)
     |> unique_constraint(:phrase)
-    |> validate_inclusion(:type, ["offline", "online", "general"])
+    |> validate_inclusion(:type, @valid_types)
   end
+
+  def validate_type(type) do
+    case type in @valid_types do
+      true -> :ok
+      false -> {:error, "CURSE TYPE NOT IN #{join_types()}"}
+    end
+  end
+
+  defp join_types(), do: Enum.join(@valid_types, ", ")
 end
