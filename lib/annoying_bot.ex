@@ -7,4 +7,6 @@ defmodule AnnoyingBot do
   defdelegate get_random_curse(type), to: AnnoyingBot.Curses.Read, as: :get_random_curse
   defdelegate get_all_curses(), to: AnnoyingBot.Curses.Read, as: :all
   defdelegate curse_user(params), to: AnnoyingBot.Curses.CurseUser, as: :call
+
+  defdelegate start_bot, to: AnnoyingBot.Discord.Supervisor, as: :start_link
 end

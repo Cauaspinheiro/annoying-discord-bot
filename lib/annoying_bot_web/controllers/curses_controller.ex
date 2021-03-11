@@ -21,8 +21,6 @@ defmodule AnnoyingBotWeb.CursesController do
 
   def create(conn, params) do
     with {:ok, curse} <- AnnoyingBot.create_curse(params) do
-      IO.inspect(curse)
-
       conn
       |> put_status(:created)
       |> render("create_curse.json", curse: curse)
