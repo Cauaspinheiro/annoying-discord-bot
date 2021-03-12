@@ -12,6 +12,15 @@ defmodule AnnoyingBot.Repo.Seeds.PopulateCurses do
   AnnoyingBot.create_curse(%{phrase: "{user} ruim", type: "general"})
   AnnoyingBot.create_curse(%{phrase: "{user} sua mãe nasceu pelada", type: "general"})
   AnnoyingBot.create_curse(%{phrase: "{user} arrombado", type: "general"})
+  AnnoyingBot.create_curse(%{phrase: "{user} programa em java", type: "general"})
+  AnnoyingBot.create_curse(%{phrase: "{user} fã da karol conká", type: "general"})
+  AnnoyingBot.create_curse(%{phrase: "{user} acredita em signo KKK", type: "general"})
+  AnnoyingBot.create_curse(%{phrase: "{user} terraplanista", type: "general"})
+  AnnoyingBot.create_curse(%{phrase: "{user} franzino", type: "general"})
+  AnnoyingBot.create_curse(%{phrase: "{user} cu de espeto", type: "general"})
+  AnnoyingBot.create_curse(%{phrase: "{user} abandona os amigos para jogar valorant sozinho", type: "general"})
+  AnnoyingBot.create_curse(%{phrase: "{user} fã do mucalol", type: "general"})
+  AnnoyingBot.create_curse(%{phrase: "{user} nerdola", type: "general"})
   AnnoyingBot.create_curse(%{phrase: @curse_long_phrase, type: "general"})
 
   # ONLINE TYPE
