@@ -1,12 +1,16 @@
-defmodule AnnoyingBot.Discord.CurseUserByCommand do
+defmodule AnnoyingBot.Discord.CurseUserCommand do
   alias Nostrum.Api
 
   alias AnnoyingBot.Curses.CurseUser
 
-  def call(channel_id, msg) do
-    return_message = get_message(msg)
+  def call(msg) do
+    return_message = msg.content
+      |> String.split(" ")
+      |> Enum.filter(fn value -> value != "" end)
+      |> Enum.at(1)
+      |> get_message()
 
-    Api.create_message(channel_id, return_message)
+    Api.create_message(msg.channel_id, return_message)
   end
 
   defp get_message(msg) do

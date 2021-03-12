@@ -1,11 +1,12 @@
 defmodule AnnoyingBot.Discord.CreateMessageHandler do
-  alias AnnoyingBot.Discord.CurseUserByCommand
+  alias AnnoyingBot.Discord.{CurseUserCommand, CreateUserCommand}
 
   def call(msg) do
     list = String.split(msg.content, " ", trim: true)
 
     case String.downcase(Enum.at(list, 0)) do
-      "!xingar" -> CurseUserByCommand.call(msg.channel_id, Enum.at(list, 1))
+      "!xingar" -> CurseUserCommand.call(msg)
+      "!registrar" -> CreateUserCommand.call(msg)
       _ -> :ignore
     end
   end

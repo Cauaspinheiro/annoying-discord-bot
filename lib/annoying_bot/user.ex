@@ -4,11 +4,12 @@ defmodule AnnoyingBot.User do
 
   @primary_key {:id, :binary_id, autogenerate: true}
 
-  @required_params [:name, :discord_id]
+  @required_params [:name, :discord_id, :created_by]
 
   schema "users" do
     field :name, :string
     field :discord_id, :string
+    field :created_by, :string
 
     timestamps()
   end
@@ -17,6 +18,6 @@ defmodule AnnoyingBot.User do
   %__MODULE__{}
     |> cast(params, @required_params)
     |> validate_required(@required_params)
-    |> unique_constraint([:discord_id])
+    |> unique_constraint([:discord_id, :name])
   end
 end
