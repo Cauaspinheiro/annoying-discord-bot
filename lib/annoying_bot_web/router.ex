@@ -15,7 +15,6 @@ defmodule AnnoyingBotWeb.Router do
     get "/curses", CursesController, :all
     post "/curses", CursesController, :create
 
-    post "/discord", DiscordController, :start, websocket: true
   end
 
   # Enables LiveDashboard only for development

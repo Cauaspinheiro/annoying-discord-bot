@@ -14,9 +14,10 @@ defmodule AnnoyingBot.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: AnnoyingBot.PubSub},
       # Start the Endpoint (http/https)
-      AnnoyingBotWeb.Endpoint
+      AnnoyingBotWeb.Endpoint,
       # Start a worker by calling: AnnoyingBot.Worker.start_link(arg)
       # {AnnoyingBot.Worker, arg}
+      AnnoyingBot.Discord.CreateMessageConsumer
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

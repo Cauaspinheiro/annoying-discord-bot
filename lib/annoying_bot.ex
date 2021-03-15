@@ -8,6 +8,4 @@ defmodule AnnoyingBot do
   defdelegate create_curse(params), to: AnnoyingBot.Curses.Create, as: :call
   defdelegate get_random_curse(type), to: AnnoyingBot.Curses.Read, as: :get_random_curse
   defdelegate get_all_curses(), to: AnnoyingBot.Curses.Read, as: :all
-
-  defdelegate start_bot, to: AnnoyingBot.Discord.Supervisor, as: :start_link
 end
