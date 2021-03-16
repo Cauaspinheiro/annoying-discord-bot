@@ -7,7 +7,7 @@ defmodule AnnoyingBot.Curse do
 
   @required_params [:phrase, :type]
 
-  @valid_types ["offline", "online", "general"]
+  @valid_types ["general", "reply"]
 
   schema "curses" do
     field :phrase, :string

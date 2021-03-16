@@ -23,13 +23,11 @@ defmodule AnnoyingBot.Repo.Seeds.PopulateCurses do
   AnnoyingBot.create_curse(%{phrase: "{user} nerdola", type: "general"})
   AnnoyingBot.create_curse(%{phrase: @curse_long_phrase, type: "general"})
 
-  # ONLINE TYPE
-  AnnoyingBot.create_curse(%{phrase: "O corno {user} acordou", type: "online"})
-  AnnoyingBot.create_curse(%{phrase: "eae {user} seu corno, tá on pq?", type: "online"})
-  AnnoyingBot.create_curse(%{phrase: "eae {user} bom dia arrombado", type: "online"})
-
-  # OFFLINE TYPE
-  AnnoyingBot.create_curse(%{phrase: "O corno {user} foi dormir", type: "offline"})
-  AnnoyingBot.create_curse(%{phrase: "vai dormir {user} aproveita e morre", type: "offline"})
-  AnnoyingBot.create_curse(%{phrase: "{user} kitou e foi dormir", type: "offline"})
+  # REPLY TYPE
+  AnnoyingBot.create_curse(%{phrase: "{user} cala a boca verme", type: "reply"})
+  AnnoyingBot.create_curse(%{phrase: "{user} para de falar merda", type: "reply"})
+  AnnoyingBot.create_curse(%{phrase: "{user} fique quieto pfv", type: "reply"})
+  AnnoyingBot.create_curse(%{phrase: "{user} PARE DE FALAR IMEDIATAMENTE", type: "reply"})
+  AnnoyingBot.create_curse(%{phrase: "{user} CALE A BOCA", type: "reply"})
+  AnnoyingBot.create_curse(%{phrase: "{user} pare pfv não aguento ler tanta merda", type: "reply"})
 end
