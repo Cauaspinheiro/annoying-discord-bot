@@ -30,11 +30,11 @@ defmodule AnnoyingBot.Curses.CurseUser do
     end
   end
 
-   def by_name(_params) do
+  def by_name(_params) do
     {:error, "NOT ALL PARAMS ARE PROVIDED (name as param, type as query)"}
   end
 
-  defp replace_phrase_with_user(phrase, replace_string) do
+  def replace_phrase_with_user(phrase, replace_string) do
     message = Regex.replace(~r/{([a-z]+)?}/, phrase, fn -> replace_string end)
 
     {:ok, message}
