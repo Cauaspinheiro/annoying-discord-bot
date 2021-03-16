@@ -1,16 +1,18 @@
 defmodule AnnoyingBot.Discord.ReplyMessageHandler do
-  alias AnnoyingBot.Discord.{ReplyMessageCommand}
-  alias AnnoyingBot.Users
+  alias AnnoyingBot.Discord.ReplyMessageCommand
 
   def call(msg) do
-    discord_id = "<@!#{msg.author.id}>"
-
-    with {:ok, user: user} <- get_author(discord_id) do
-      ReplyMessageCommand.call(msg, user)
+    with :ok <- curse_by_lucky() do
+      ReplyMessageCommand.call(msg)
     end
   end
 
-  defp get_author(discord_id) do
-    Users.Read.get_by_discord(discord_id)
+  defp curse_by_lucky() do
+    random_index = Enum.random(0..12)
+
+    with 0 <- rem(random_index, 2) do
+      :ok
+      else _ -> :lucky
+    end
   end
 end

@@ -1,20 +1,18 @@
 defmodule AnnoyingBot.Discord.ReplyMessageCommand do
-  alias AnnoyingBot.{Curses, User, Curse}
+  alias AnnoyingBot.{Curses, User, Curse, Users}
   alias Nostrum.Api
 
 
-  def call(msg, user) do
-    with {:ok, curse} <- curse_by_lucky(user) do
+  def call(msg) do
+    discord_id = "<@!#{msg.author.id}>"
+
+    with {:ok, user} <- get_author(discord_id), {:ok, curse} <- curse_user(user) do
       Api.create_message(msg.channel_id, curse)
     end
   end
 
-  defp curse_by_lucky(user) do
-    random_index = Enum.random(0..12)
-
-    with 0 <- rem(random_index, 2) do
-      curse_user(user)
-    end
+  defp get_author(discord_id) do
+    Users.Read.get_by_discord(discord_id)
   end
 
   defp curse_user(%User{discord_id: discord_id }) do
