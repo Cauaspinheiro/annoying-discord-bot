@@ -7,17 +7,11 @@ defmodule AnnoyingBot.Application do
 
   def start(_type, _args) do
     children = [
-      # Start the Ecto repository
       AnnoyingBot.Repo,
-      # Start the Telemetry supervisor
       AnnoyingBotWeb.Telemetry,
-      # Start the PubSub system
       {Phoenix.PubSub, name: AnnoyingBot.PubSub},
-      # Start the Endpoint (http/https)
       AnnoyingBotWeb.Endpoint,
-      # Start a worker by calling: AnnoyingBot.Worker.start_link(arg)
-      # {AnnoyingBot.Worker, arg}
-      AnnoyingBot.Discord.CreateMessageConsumer
+      AnnoyingBot.Discord.Consumer
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

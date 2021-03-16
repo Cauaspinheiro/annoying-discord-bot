@@ -1,4 +1,4 @@
-defmodule AnnoyingBot.Discord.CreateMessageConsumer do
+defmodule AnnoyingBot.Discord.Consumer do
   use Nostrum.Consumer
 
   alias AnnoyingBot.Discord.{CreateMessageHandler, ReplyMessageHandler}
