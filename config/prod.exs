@@ -13,6 +13,10 @@ config :annoying_bot, AnnoyingBotWeb.Endpoint,
   url: [host: "example.com", port: 80],
   cache_static_manifest: "priv/static/cache_manifest.json"
 
+config :nostrum,
+  token: "ODE3MDMzNjk4OTY4MjA3MzYx.YEDn7Q.bhl9tNUkzdNR53xhOHCmHBnfa2s", # The token of your bot as a string
+  num_shards: :auto # The number of shards you want to run your bot under, or :auto.
+
 # Do not print debug messages in production
 config :logger, level: :info
 
