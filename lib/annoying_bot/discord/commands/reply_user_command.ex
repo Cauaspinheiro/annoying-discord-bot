@@ -14,7 +14,7 @@ defmodule AnnoyingBot.Discord.ReplyMessageCommand do
     Users.Read.get_by_discord(discord_id)
   end
 
-  defp curse_user(%User{discord_id: discord_id }) do
+  defp curse_user(user: %User{discord_id: discord_id }) do
     {:ok, curse: %Curse{phrase: phrase}} = Curses.Read.get_random_curse("reply")
 
     Curses.CurseUser.replace_phrase_with_user(phrase, discord_id)
