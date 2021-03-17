@@ -49,9 +49,6 @@ config :annoying_bot, AnnoyingBotWeb.Endpoint,
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
 
-config :nostrum,
-  token: "ODIxNzE4MzU0MzYzNTQ3Njky.YFHy2g.iID4yb9egYDIsC2BW3Bzs4oDYrk", # The token of your bot as a string
-  num_shards: :auto # The number of shards you want to run your bot under, or :auto.
 
 # Set a higher stacktrace during development. Avoid configuring such
 # in production as building large stacktraces may be expensive.

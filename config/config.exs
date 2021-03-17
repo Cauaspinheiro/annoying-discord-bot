@@ -21,6 +21,13 @@ config :annoying_bot, AnnoyingBotWeb.Endpoint,
 config :annoying_bot, AnnoyingBot.Repo,
   migration_primary_key: [type: :binary_id]
 
+case System.get_env("DISCORD_TOKEN") do
+  nil -> import_config "secret.exs"
+  token -> config :nostrum,
+  token: token, # The token of your bot as a string
+  num_shards: :auto # The number of shards you want to run your bot under, or :auto.
+end
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
