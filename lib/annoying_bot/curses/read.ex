@@ -8,6 +8,13 @@ defmodule AnnoyingBot.Curses.Read do
     {:ok, curses: curses}
   end
 
+  def get_by_phrase(phrase) do
+    with nil <- Repo.get_by(Curse, phrase: phrase) do
+      {:error, "CURSE NOT FOUND"}
+      else curse -> {:ok, curse}
+    end
+  end
+
   def get_random_curse(type) do
     with :ok <- Curse.validate_type(type) do
       Curse

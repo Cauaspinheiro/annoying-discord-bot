@@ -5,13 +5,14 @@ defmodule AnnoyingBot.Curse do
 
   @primary_key {:id, :binary_id, autogenerate: true}
 
-  @required_params [:phrase, :type]
+  @required_params [:phrase, :type, :created_by]
 
   @valid_types ["general", "reply"]
 
   schema "curses" do
     field :phrase, :string
     field :type, :string
+    field :created_by, :string
 
     timestamps()
   end
@@ -30,6 +31,8 @@ defmodule AnnoyingBot.Curse do
       false -> {:error, "CURSE TYPE NOT IN #{join_types()}"}
     end
   end
+
+  def get_types, do: join_types()
 
   defp join_types(), do: Enum.join(@valid_types, ", ")
 end

@@ -10,7 +10,7 @@ defmodule AnnoyingBot.Discord.ReplyMessageHandler do
   defp curse_by_lucky() do
     random_index = Enum.random(0..12)
 
-    with 0 <- rem(random_index, 2) do
+    with true <- random_index < 6 do
       :ok
       else _ -> :lucky
     end

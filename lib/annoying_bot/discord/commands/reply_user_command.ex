@@ -2,7 +2,6 @@ defmodule AnnoyingBot.Discord.ReplyMessageCommand do
   alias AnnoyingBot.{Curses, User, Curse, Users}
   alias Nostrum.Api
 
-
   def call(msg) do
     discord_id = "<@!#{msg.author.id}>"
 
