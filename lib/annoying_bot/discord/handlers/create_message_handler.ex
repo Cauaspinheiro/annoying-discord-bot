@@ -12,7 +12,7 @@ defmodule AnnoyingBot.Discord.CreateMessageHandler do
       "!xingamento" -> CreateCurseCommand.call(msg)
       "!usuarios" -> GetAllUsersCommand.call(msg)
       "!usuario" -> GetUserCommand.call(msg)
-      "!alterar" -> UpdateUserCommand.call(msg)
+      "!apelido" -> UpdateUserCommand.call(msg)
       _ -> :ignore
     end
   end

@@ -19,7 +19,6 @@ defmodule AnnoyingBot.Discord.GetAllUsersCommand do
   defp join_users(users) do
     message = users
     |> Enum.map(fn value -> format_user(value) end)
-    |> IO.inspect()
     |> Enum.join("\n")
 
     {:ok, message}

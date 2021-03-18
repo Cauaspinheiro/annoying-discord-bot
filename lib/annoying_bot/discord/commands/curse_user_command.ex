@@ -4,9 +4,6 @@ defmodule AnnoyingBot.Discord.CurseUserCommand do
   alias AnnoyingBot.Curses.CurseUser
 
   def call(msg) do
-    System.get_env("Hello")
-    |> IO.inspect()
-
     return_message = msg.content
       |> String.split(" ")
       |> Enum.filter(fn value -> value != "" end)
