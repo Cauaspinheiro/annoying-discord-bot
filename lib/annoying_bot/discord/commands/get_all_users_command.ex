@@ -31,8 +31,8 @@ defmodule AnnoyingBot.Discord.GetAllUsersCommand do
 
     date = Enum.join([inserted_at.day, inserted_at.month, inserted_at.year], "/")
 
-    first_line = "#{discord_id} --- Criado por #{created_by}\n"
-    info = "```Apelido: #{name} - Criado em: #{date} - ID: #{id}```"
+    first_line = "#{discord_id} -- Criado por #{created_by}\n"
+    info = "```Apelido: #{name} | Criado em: #{date} | ID: #{id}```"
 
     first_line <> info
   end
