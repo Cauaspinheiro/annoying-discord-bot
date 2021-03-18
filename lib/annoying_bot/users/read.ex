@@ -1,5 +1,6 @@
 defmodule AnnoyingBot.Users.Read do
   alias AnnoyingBot.{User, Repo}
+  import Ecto.Query
 
   def get_by_id(id) do
     case Repo.get_by(User, %{id: id}) do
@@ -9,7 +10,9 @@ defmodule AnnoyingBot.Users.Read do
   end
 
   def all do
-    case Repo.all(User) do
+    query = from u in User, order_by: u.inserted_at
+
+    case Repo.all(query) do
       [] -> {:error, "USERS NOT FOUND"}
       nil -> {:error, "USERS NOT FOUND"}
       users -> {:ok, users: users}
