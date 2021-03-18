@@ -1,7 +1,7 @@
 defmodule AnnoyingBot.Discord.CreateMessageHandler do
   alias AnnoyingBot.Discord.{CreateCurseCommand, CreateUserCommand}
   alias AnnoyingBot.Discord.{GetAllUsersCommand, GetUserCommand}
-  alias AnnoyingBot.Discord.{CurseUserCommand}
+  alias AnnoyingBot.Discord.{CurseUserCommand, UpdateUserCommand}
 
   def call(msg) do
     list = String.split(msg.content, " ", trim: true)
@@ -12,6 +12,7 @@ defmodule AnnoyingBot.Discord.CreateMessageHandler do
       "!xingamento" -> CreateCurseCommand.call(msg)
       "!usuarios" -> GetAllUsersCommand.call(msg)
       "!usuario" -> GetUserCommand.call(msg)
+      "!alterar" -> UpdateUserCommand.call(msg)
       _ -> :ignore
     end
   end
