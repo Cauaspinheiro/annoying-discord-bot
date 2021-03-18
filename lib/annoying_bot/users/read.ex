@@ -9,7 +9,11 @@ defmodule AnnoyingBot.Users.Read do
   end
 
   def all do
-    {:ok, users: Repo.all(User)}
+    case Repo.all(User) do
+      [] -> {:error, "USERS NOT FOUND"}
+      nil -> {:error, "USERS NOT FOUND"}
+      users -> {:ok, users: users}
+    end
   end
 
   def get_by_discord(discord) do
