@@ -10,7 +10,7 @@ database_url =
     environment variable DATABASE_URL is missing.
     For example: ecto://USER:PASS@HOST/DATABASE
     """
-
+ljbqwjdbjqernbrçjwEBFRJWEBFJWEFJBWEJRWBEFKJEBDJBKDJBEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 config :annoying_bot, AnnoyingBot.Repo,
   # ssl: true,
   url: database_url,
